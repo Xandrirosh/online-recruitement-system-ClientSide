@@ -1,4 +1,4 @@
-export const baseURL = 'http://localhost:5000'
+export const baseURL = 'https://vacancies-nibs-sever.vercel.app/';
 
 const summaryApi = {
     register: {
