@@ -1,4 +1,4 @@
-export const baseURL = 'https://vacancies-nibs-sever.vercel.app/';
+export const baseURL = 'https://online-recruitement-system-serverside.onrender.com/';
 
 const summaryApi = {
     register: {
