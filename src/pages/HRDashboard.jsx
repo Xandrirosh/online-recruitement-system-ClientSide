@@ -86,7 +86,7 @@ export default function Dashboard() {
         </div>
 
         <nav className="px-4 space-y-2 sticky">
-          <SidebarItem icon={<LayoutDashboard size={18} />} label="Dashboard" to="/hr/dashboard" />
+          <SidebarItem icon={<LayoutDashboard size={18} />} label="Dashboard" />
           <SidebarItem icon={<Briefcase size={18} />} label="Jobs" to="/jobs" />
           <SidebarItem icon={<Users size={18} />} label="Applicants" to="/applicants" />
           <SidebarItem icon={<BarChart3 size={18} />} label="Reports" to="/reports" />
