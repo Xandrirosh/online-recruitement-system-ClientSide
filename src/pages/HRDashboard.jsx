@@ -7,10 +7,10 @@ import {
   LogOut,
 } from "lucide-react";
 import JobPostForm from "../components/Post";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Axios from "../utils/Axios";
 import summaryApi from "../common/summaryApi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const [showForm, setShowForm] = useState(false);
@@ -19,6 +19,9 @@ export default function Dashboard() {
     applicants: 0,
     shortlisted: 0,
   });
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const user = useSelector((state) => state.user);
 
@@ -76,6 +79,12 @@ export default function Dashboard() {
     fetchRecentApplicants();
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    dispatch(logout());
+    navigate("/login");
+  };
+
   return (
     <div className="flex min-h-screen bg-gray-100">
 
@@ -90,7 +99,7 @@ export default function Dashboard() {
           <SidebarItem icon={<Briefcase size={18} />} label="Jobs" to="/jobs" />
           <SidebarItem icon={<Users size={18} />} label="Applicants" to="/applicants" />
           <SidebarItem icon={<BarChart3 size={18} />} label="Reports" to="/reports" />
-          <SidebarItem icon={<LogOut size={18} />} label="Logout" to="/logout" />
+          <SidebarItem icon={<LogOut size={18} />} label="Logout" onClick={handleLogout} />
         </nav>
       </aside>
 
