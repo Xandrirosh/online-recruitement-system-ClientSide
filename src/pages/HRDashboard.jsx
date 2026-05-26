@@ -134,13 +134,6 @@ export default function Dashboard() {
           </button>
           {/* Render JobPostForm conditionally */}
           {showForm && <JobPostForm closeForm={() => setShowForm(false)} />}
-
-          <button className="bg-gray-200 px-4 py-2 rounded-lg">
-            View Applicants
-          </button>
-          <button className="bg-gray-200 px-4 py-2 rounded-lg">
-            Generate Report
-          </button>
         </div>
 
         {/* RECENT APPLICANTS */}
