@@ -44,11 +44,6 @@ export default function ScheduleInterview() {
 
                 if (response.data.success) {
                     setApplicant(response.data.data);
-                    toast.success(
-                        "Interview Scheduled Successfully"
-                    );
-
-                    navigate("/applicants");
 
                 }
 
@@ -96,15 +91,13 @@ export default function ScheduleInterview() {
             if (response.data.success) {
 
                 toast.success(
-                    "Interview Scheduled"
+                    "Interview Scheduled Successfully"
                 );
 
-                setFormData({
-                    interviewDate: "",
-                    interviewTime: "",
-                    status: "Scheduled",
-                });
+                navigate("/applicants");
+
             }
+
 
         } catch (error) {
             console.log(error);
