@@ -10,6 +10,7 @@ import Reports from '../pages/Reports.jsx'
 import ApplyJob from '../pages/ApplyJob.jsx'
 import Applicants from '../pages/Applicants.jsx'
 import ScheduleInterview from '../pages/schedule.jsx'
+import MyInterview from '../pages/MyInterview.jsx'
 
 
 export const Route = createBrowserRouter([
@@ -36,6 +37,10 @@ export const Route = createBrowserRouter([
             {
                 path: 'apply/:jobId',
                 element: <ApplyJob />
+            },
+            {
+                path: 'my-interviews',
+                element: <MyInterview />
             },
             {
                 path: 'dashboard',

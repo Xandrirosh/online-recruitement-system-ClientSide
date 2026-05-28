@@ -14,20 +14,44 @@ export default function Navbar() {
 
   const user = useSelector((state) => state.user);
 
+  // CHECK LOGIN FIRST
+  const isLoggedIn = !!user?._id;
+
   const navLinks = [
+
     { name: "Home", path: "/" },
+
     { name: "Jobs", path: "/jobs" },
+
+    // JOB SEEKER INTERVIEWS
+    ...(isLoggedIn && user?.role !== "HR"
+      ? [
+        {
+          name: "My Interviews",
+          path: "/my-interviews",
+        },
+      ]
+      : []),
+
+    // HR LINKS
     ...(user?.role === "HR"
       ? [
-        { name: "Dashboard", path: "/dashboard" },
-        { name: "Reports", path: "/reports" },
+        {
+          name: "Dashboard",
+          path: "/dashboard",
+        },
+
+        {
+          name: "Reports",
+          path: "/reports",
+        },
       ]
       : []),
   ];
 
   const isActive = (path) => location.pathname === path;
 
-  const isLoggedIn = !!user?._id; // true if user is logged in
+
 
   const handleLogout = () => {
     localStorage.removeItem("user");
