@@ -1,4 +1,4 @@
-export const baseURL = 'http://localhost:5000/';
+export const baseURL = 'https://online-recruitement-system-serverside.onrender.com/';
 
 const summaryApi = {
     register: {
@@ -8,7 +8,7 @@ const summaryApi = {
     login: {
         url: 'api/user/login',
         method: 'post'
-    },
+    },  
     postJob: {
         url: 'api/job/create',
         method: 'post'
@@ -60,7 +60,8 @@ const summaryApi = {
     getMyInterviews: {
         url: 'api/interview/my-interviews/:userId',
         method: 'get'
-    }
+    },
+    
 
 }
 
